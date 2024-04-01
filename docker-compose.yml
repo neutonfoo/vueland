@@ -1,0 +1,9 @@
+services:
+  client:
+    build:
+      context: client
+    ports:
+      - "3000:8080"
+  server:
+    build:
+      context: server
