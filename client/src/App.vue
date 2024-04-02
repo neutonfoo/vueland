@@ -1,8 +1,15 @@
 <script setup>
+import { onMounted } from 'vue'
+
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 
-fetch("/api/test").then(res => res.json()).then(res => console.log(res))
+onMounted(async () => {
+  const res = await fetch("/api/test")
+  const json = await res.json()
+
+  console.log(json)
+})
 
 </script>
 
